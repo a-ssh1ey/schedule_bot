@@ -1,0 +1,7 @@
+aiogram
+asyncio
+time
+os
+fake_useragent
+requests
+selenium
