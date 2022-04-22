@@ -1,4 +1,5 @@
 import time
+import schedule
 from array import *
 import os
 os.chmod('C:/Users/38066/PycharmProjects/parsing/chromedriver', 800)
@@ -14,7 +15,7 @@ user = fake_useragent.UserAgent().random
 session = requests.Session()
 options = webdriver.ChromeOptions()
 options.add_argument(user)
-driver = webdriver.Chrome(executable_path=r"C:\Users\38066\PycharmProjects\parsing\chromedriver\chromedriver.exe")
+driver = webdriver.Chrome(executable_path=r"chromedriver/chromedriver.exe")
 header ={
     'user-agent': user
 }
@@ -47,17 +48,10 @@ for e in range(0,2):
 
                 except:
                     pass
-    #//*[@id="diary"]/table[1]/tbody/tr[1]/td[2]/a
-    #//*[@id="diary"]/table[1]/tbody/tr[3]/td[2]/a
-    #//*[@id="diary"]/table[1]/tbody/tr[5]/td[2]/a
-    #//*[@id="diary"]/table[2]/tbody/tr[1]/td[2]/a
+
         exit = driver.find_element_by_xpath("/ html / body / div[1] / div / ul[2] / li / a").click()
     except Exception as ex:
         print(ex)
-
 driver.close()
-#//*[@id="diary"]/h4[2]
 print(shedules)
-print(shedules[0][0])
-print(shedules[0][0][7])
-print(len(shedules[0][0]))
+
